@@ -4,7 +4,7 @@ package com.bratyshevTD.supplierOfProducts.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table
+@Table (name = "Product")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

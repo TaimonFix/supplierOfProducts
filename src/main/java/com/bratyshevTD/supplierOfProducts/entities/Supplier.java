@@ -3,7 +3,7 @@ package com.bratyshevTD.supplierOfProducts.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table
+@Table (name = "Supplier")
 public class Supplier {
 
     @Id
