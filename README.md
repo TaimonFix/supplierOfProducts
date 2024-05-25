@@ -30,8 +30,8 @@
 
 ====================================================================================
 
-   Для подключения web-приложения запустите SupplierOfProductsApplication, приложение размещено по локальному адресу: [localhost://8883/app](http://localhost:8883/app)
+Для подключения web-приложения запустите SupplierOfProductsApplication, приложение размещено по локальному адресу: [localhost://8883/app](http://localhost:8883/app)
    
-   Путь к БД: [sql/supplier_of_products.sql](https://github.com/TaimonFix/supplierOfProducts/blob/master/sql/supplier_of_products.sql)
+Путь к БД: [sql/supplier_of_products.sql](https://github.com/TaimonFix/supplierOfProducts/blob/master/sql/supplier_of_products.sql)
    
 ====================================================================================
