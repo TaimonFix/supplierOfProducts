@@ -3,9 +3,7 @@ package com.bratyshevTD.supplierOfProducts.entities;
 import jakarta.persistence.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
-
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
 @Table(name = "delivery")

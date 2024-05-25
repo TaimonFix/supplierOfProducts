@@ -14,7 +14,6 @@ public class DeliveryReport {
 //        this.count = (long) objects[3];
 //    }
 
-
     public DeliveryReport(Supplier supplierId, Product productId, long count, long sum) {
         this.supplierId = supplierId;
         this.productId = productId;

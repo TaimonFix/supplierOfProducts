@@ -1,9 +1,6 @@
 package com.bratyshevTD.supplierOfProducts.entities;
 
-import com.bratyshevTD.supplierOfProducts.controllers.ProductController;
 import jakarta.persistence.*;
-
-import java.util.List;
 
 @Entity
 @Table(name = "deliveries_products")

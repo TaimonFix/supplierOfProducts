@@ -1,13 +1,9 @@
 package com.bratyshevTD.supplierOfProducts.services;
 
 import com.bratyshevTD.supplierOfProducts.entities.Delivery;
-import com.bratyshevTD.supplierOfProducts.entities.DeliveryProduct;
-import com.bratyshevTD.supplierOfProducts.entities.DeliveryReport;
 import com.bratyshevTD.supplierOfProducts.repositories.DeliveryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.time.LocalDate;
 import java.util.List;
 
 @Service

@@ -9,10 +9,7 @@ public class Supplier {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String fullName;
-
-
     private String phone;
 
     public Supplier(Long id, String fullName, String phone) {

@@ -1,7 +1,6 @@
 package com.bratyshevTD.supplierOfProducts.services;
 
 import com.bratyshevTD.supplierOfProducts.entities.Product;
-import com.bratyshevTD.supplierOfProducts.entities.Supplier;
 import com.bratyshevTD.supplierOfProducts.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

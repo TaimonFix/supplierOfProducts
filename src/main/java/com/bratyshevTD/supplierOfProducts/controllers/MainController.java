@@ -9,14 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 @Controller
 public class MainController {
@@ -53,7 +49,7 @@ public class MainController {
     }
 
     @PostMapping("/delivery-accept")
-    public String deliveryAccept(Model model, @RequestParam Long deliveryId, @RequestParam String supplier, @RequestParam LocalDate date,
+    public String deliveryAccept(Model model, @RequestParam(required = false) Long deliveryId, @RequestParam(required = false) String supplier, @RequestParam(required = false) LocalDate date,
                                  @RequestParam(required = false) String product1, @RequestParam(required = false) Integer count1, @RequestParam(required = false) Integer price1,
                                  @RequestParam(required = false) String product2, @RequestParam(required = false) Integer count2, @RequestParam(required = false) Integer price2,
                                  @RequestParam(required = false) String product3, @RequestParam(required = false) Integer count3, @RequestParam(required = false) Integer price3,
@@ -62,7 +58,7 @@ public class MainController {
     {
 
         if ((product1.isEmpty() && product2.isEmpty() && product3.isEmpty() && product4.isEmpty())
-                || (deliveryId.equals(null) && supplier.isEmpty() && date.equals(null))){
+                || deliveryId == null || supplier.isEmpty() || date == null) {
             return "redirect:";
         }
 
@@ -86,13 +82,19 @@ public class MainController {
             deliveryProductService.addDeliveryProduct(deliveryProduct);
         }
         return "delivery-accept";
+}
 
-    }
 
     @GetMapping("/delivery-report")
-    public String deliveryReport(Model model, @RequestParam LocalDate dateFrom, @RequestParam LocalDate dateTo) {
+    public String deliveryReport(Model model, @RequestParam(required = false) LocalDate dateFrom, @RequestParam(required = false) LocalDate dateTo) {
+        if ((dateFrom == null || dateTo == null) || dateFrom.isAfter(dateTo)) {
+            return "redirect:";
+        }
         List<DeliveryReport> deliveryReportList = deliveryProductService.report(dateFrom, dateTo);
         model.addAttribute("reports", deliveryReportList);
+        model.addAttribute("dateFrom", dateFrom);
+        model.addAttribute("dateTo", dateTo);
+
         return "delivery-report";
     }
 }
