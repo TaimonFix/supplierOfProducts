@@ -11,12 +11,27 @@
 2. Создать отчёт. За выбранный период показать поступление видов продукции по
    поставщикам с итогами по весу и стоимости.
 
-## Стек технологий
+* ## Стек технологий
 
      * Backend: Java
      * DB: PostgreSQL
      * Frameworks: Spring boot + Hibernate
 
-## Физическая модель
+* ## Физическая модель
 ![Физ. модель.png](https://github.com/TaimonFix/supplierOfProducts/blob/master/Физ.%20модель.png)
+### Сущности
+   **Supplier** - таблица с поставщиками товаров.
+   
+   **Product** - таблица с продуктами.
+   
+   **Delivery** - таблица с поставками.
+   
+   **Deliveries_Products** - таблица, объединяющая поля delivery_id, product_id из таблиц Delivery, Product.
 
+============================================================================================
+
+   Для подключения web-приложения запустите SupplierOfProductsApplication, приложение размещено по локальному адресу: [localhost://8883/app](http://localhost:8883/app)
+   
+   Путь к БД: [sql/supplier_of_products.sql](https://github.com/TaimonFix/supplierOfProducts/blob/master/sql/supplier_of_products.sql)
+   
+============================================================================================
