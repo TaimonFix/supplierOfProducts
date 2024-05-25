@@ -75,4 +75,15 @@ public class DeliveryProduct {
     public void setPrice(int price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return "DeliveryProduct{" +
+                "id=" + id +
+                ", deliveryId=" + deliveryId +
+                ", productId=" + productId +
+                ", count=" + count +
+                ", price=" + price +
+                '}';
+    }
 }

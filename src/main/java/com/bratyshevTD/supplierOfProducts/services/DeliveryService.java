@@ -2,6 +2,7 @@ package com.bratyshevTD.supplierOfProducts.services;
 
 import com.bratyshevTD.supplierOfProducts.entities.Delivery;
 import com.bratyshevTD.supplierOfProducts.entities.DeliveryProduct;
+import com.bratyshevTD.supplierOfProducts.entities.DeliveryReport;
 import com.bratyshevTD.supplierOfProducts.repositories.DeliveryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,8 +26,9 @@ public class DeliveryService {
     }
 
     public Delivery getById(Long id) { return deliveryRepository.getReferenceById(id); }
+    public List<Delivery> getAllDeliveries() { return deliveryRepository.findAll(); }
 
-    public List<Delivery> report(LocalDate dateFrom, LocalDate dateTo) {return deliveryRepository.report(dateFrom, dateTo); }
+
 
 
 }

@@ -16,4 +16,23 @@
     <div th:replace="~{navigation :: navigation(product)}"> </div>
     <h1>Список продуктов</h1>
 </div>
+
+<div>
+    <table class="table table-hover">
+        <thead class="bg-light">
+        <tr>
+            <td>Номер товара</td>
+            <td>Название</td>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="product : ${products}">
+            <td th:text="${product.id}"></td>
+            <td th:text="${product.title}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
 </body>

@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="UTF-8">
-    <title style="background-color:#1c87c9; color:#fff;">Поставщики</title>
+    <title style="background-color:#1c87c9; color:#fff;">Заказы</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -13,25 +13,25 @@
 
 <body>
 <div class="container">
-    <div th:replace="~{navigation :: navigation(supplier)"> </div>
-    <h1>Список поставщиков</h1>
+    <div th:replace="~{navigation :: navigation(delivery)}"> </div>
+    <h1>Список заказов</h1>
 </div>
 
 <div>
     <table class="table table-hover">
         <thead class="bg-light">
         <tr>
-            <td>Номер работника</td>
-            <td>ФИО</td>
-            <td>Номер телефона</td>
+            <td>Номер заказа</td>
+            <td>Поставщик</td>
+            <td>Дата</td>
         </tr>
         </thead>
 
         <tbody>
-        <tr th:each="supplier : ${suppliers}">
-            <td th:text="${supplier.id}"></td>
-            <td th:text="${supplier.fullName}"></td>
-            <td th:text="${supplier.phone}"></td>
+        <tr th:each="delivery : ${deliveries}">
+            <td th:text="${delivery.id}"></td>
+            <td th:text="${delivery.supplierId.fullName}"></td>
+            <td th:text="${delivery.date}"></td>
         </tr>
         </tbody>
     </table>

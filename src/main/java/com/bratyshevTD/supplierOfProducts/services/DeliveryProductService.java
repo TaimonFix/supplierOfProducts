@@ -1,6 +1,7 @@
 package com.bratyshevTD.supplierOfProducts.services;
 
 import com.bratyshevTD.supplierOfProducts.entities.DeliveryProduct;
+import com.bratyshevTD.supplierOfProducts.entities.DeliveryReport;
 import com.bratyshevTD.supplierOfProducts.repositories.DeliveryProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,5 +23,7 @@ public class DeliveryProductService {
 
     public void addDeliveryProduct(DeliveryProduct deliveryProduct) { deliveryProductRepository.save(deliveryProduct); }
 
-
+    public List<DeliveryReport> report(LocalDate dateFrom, LocalDate dateTo) {
+        System.out.println(deliveryProductRepository.report(dateFrom, dateTo));
+        return deliveryProductRepository.report(dateFrom, dateTo); }
 }

@@ -5,6 +5,8 @@ import com.bratyshevTD.supplierOfProducts.repositories.SupplierRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class SupplierService {
 
@@ -15,10 +17,12 @@ public class SupplierService {
         this.supplierRepository = supplierRepository;
     }
 
-    public void addSupplier(Supplier supplier) {supplierRepository.save(supplier);}
+    public void addSupplier(Supplier supplier) { supplierRepository.save(supplier); }
 
-    public Supplier getSupplierById(Long id) {return supplierRepository.getReferenceById(id); }
+    public Supplier getSupplierById(Long id) { return supplierRepository.getReferenceById(id); }
 
-    public Supplier getByFullName(String fullName) {return supplierRepository.findByFullName(fullName); }
+    public Supplier getByFullName(String fullName) { return supplierRepository.findByFullName(fullName); }
+
+    public List<Supplier> getAllSuppliers() { return supplierRepository.findAll(); }
 
 }

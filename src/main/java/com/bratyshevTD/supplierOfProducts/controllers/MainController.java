@@ -1,9 +1,6 @@
 package com.bratyshevTD.supplierOfProducts.controllers;
 
-import com.bratyshevTD.supplierOfProducts.entities.Delivery;
-import com.bratyshevTD.supplierOfProducts.entities.DeliveryProduct;
-import com.bratyshevTD.supplierOfProducts.entities.Product;
-import com.bratyshevTD.supplierOfProducts.entities.Supplier;
+import com.bratyshevTD.supplierOfProducts.entities.*;
 import com.bratyshevTD.supplierOfProducts.services.DeliveryProductService;
 import com.bratyshevTD.supplierOfProducts.services.DeliveryService;
 import com.bratyshevTD.supplierOfProducts.services.ProductService;
@@ -64,6 +61,11 @@ public class MainController {
 
     {
 
+        if ((product1.isEmpty() && product2.isEmpty() && product3.isEmpty() && product4.isEmpty())
+                || (deliveryId.equals(null) && supplier.isEmpty() && date.equals(null))){
+            return "redirect:";
+        }
+
         Delivery delivery = new Delivery(deliveryId, supplierService.getByFullName(supplier), date);
         deliveryService.addDelivery(delivery);
 
@@ -83,14 +85,14 @@ public class MainController {
             DeliveryProduct deliveryProduct = new DeliveryProduct(deliveryService.getById(deliveryId), productService.getByTitle(product4), count4, price4);
             deliveryProductService.addDeliveryProduct(deliveryProduct);
         }
-//        return "delivery-accept";
-        return "index";
+        return "delivery-accept";
+
     }
 
     @GetMapping("/delivery-report")
     public String deliveryReport(Model model, @RequestParam LocalDate dateFrom, @RequestParam LocalDate dateTo) {
-        List<Delivery> deliveryList = deliveryService.report(dateFrom, dateTo);
-        model.addAttribute("deliveries", deliveryList);
+        List<DeliveryReport> deliveryReportList = deliveryProductService.report(dateFrom, dateTo);
+        model.addAttribute("reports", deliveryReportList);
         return "delivery-report";
     }
 }

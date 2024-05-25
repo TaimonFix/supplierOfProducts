@@ -19,14 +19,14 @@
                 <li class="nav-item" th:classappend="${activeTab == 'home' ? 'active' : ''}">
                     <a class="nav-link" th:href="@{'/index'}">Главная</a>
                 </li>
-                <li class="nav-item" th:classappend="${activeTab == 'order' ? 'active' : ''}">
-                    <a class="nav-link"  th:href="@{'/orders'}">Заказы</a>
+                <li class="nav-item" th:classappend="${activeTab == 'delivery' ? 'active' : ''}">
+                    <a class="nav-link"  th:href="@{'/delivery'}">Заказы</a>
                 </li>
                 <li class="nav-item" th:classappend="${activeTab == 'product' ? 'active' : ''}">
-                    <a class="nav-link"  th:href="@{'/products'}">Продукты</a>
+                    <a class="nav-link"  th:href="@{'/product'}">Продукты</a>
                 </li>
                 <li class="nav-item" th:classappend="${activeTab == 'supplier' ? 'active' : ''}">
-                    <a class="nav-link" th:href="@{'/suppliers'}">Поставщики</a>
+                    <a class="nav-link" th:href="@{'/supplier'}">Поставщики</a>
                 </li>
             </ul>
         </div>

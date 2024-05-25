@@ -19,20 +19,25 @@
 </div>
 
 <div>
-    <table th:if="${deliveries.size > 0}" class="table table-hover">
+    Отчет по следующим датам:<br>
+    Дата начала:<href th:date="${dateFrom}"></href>
+    Дата конца:<href th:date="${dateTo}"></href>
+    <table class="table table-hover">
         <thead class="bg-light">
         <tr>
-            <td>Номер заказа</td>
-            <td>Работник</td>
-            <td>Дата</td>
+            <td>Поставщик</td>
+            <td>Товар</td>
+            <td>Общий вес</td>
+            <td>Общая стоимость</td>
         </tr>
         </thead>
 
         <tbody>
-        <tr th:each="delivery : ${deliveries}">
-            <td th:text="${deliveries.id}"></td>
-            <td th:text="${deliveries.supplierId}"></td>
-            <td th:text="${deliveries.date}"></td>
+        <tr th:each="report : ${reports}">
+            <td th:text="${report.supplierId.fullName}"></td>
+            <td th:text="${report.productId.title}"></td>
+            <td th:text="${report.count}"></td>
+            <td th:text="${report.sum}"></td>
         </tr>
         </tbody>
     </table>
