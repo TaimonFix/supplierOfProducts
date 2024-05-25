@@ -16,3 +16,7 @@
      * Backend: Java
      * DB: PostgreSQL
      * Frameworks: Spring boot + Hibernate
+
+## Физическая модель
+![Физ. модель.png](%D4%E8%E7.%20%EC%EE%E4%E5%EB%FC.png)
+
