@@ -18,5 +18,5 @@
      * Frameworks: Spring boot + Hibernate
 
 ## Физическая модель
-![Физ. модель.png](%D4%E8%E7.%20%EC%EE%E4%E5%EB%FC.png)
+![Физ. модель.png](https://github.com/TaimonFix/supplierOfProducts/blob/master/Физ.%20модель.png)
 
