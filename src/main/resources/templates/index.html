@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title style="background-color:#1c87c9; color:#fff;">Главная страница</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <div th:replace="~{navigation :: navigation(home)}"> </div>
+    <h1>Главная страница</h1>
+
+    <h2 >1. Прием товаров</h2>
+    <form th:action="@{'/delivery-accept'}" method="post">
+
+        Введите номер заказа  <input type="number" th:name="deliveryId" class="form-control" placeholder="Номер заказа"><br> </td>
+
+        Введите ФИО Поставщика  <input type="text" th:name="supplier" class="form-control" placeholder="Поставщик"><br> </td>
+        Введите дату поставки<td> <input type="date" th:name="date" class="form-control"><br> </td>
+
+        Введите товары и их количество
+        <table>
+        <td> <input type="text" th:name="product1" class="form-control" placeholder="Товар 1"></td>
+        <td> <input type="number" th:name="count1" class="form-control" placeholder="Количество"></td>
+        <td> <input type="number" th:name="price1" class="form-control" placeholder="Цена"></td>
+        </table>
+        <table>
+            <td> <input type="text" th:name="product2" class="form-control" placeholder="Товар 2"></td>
+            <td> <input type="number" th:name="count2" class="form-control" placeholder="Количество"></td>
+            <td> <input type="number" th:name="price2" class="form-control" placeholder="Цена"></td>
+        </table>
+        <table>
+            <td> <input type="text" th:name="product3" class="form-control" placeholder="Товар 3"></td>
+            <td> <input type="number" th:name="count3" class="form-control" placeholder="Количество"></td>
+            <td> <input type="number" th:name="price3" class="form-control" placeholder="Цена"></td>
+
+        </table>
+        <table>
+            <td> <input type="text" th:name="product4" class="form-control" placeholder="Товар 4"></td>
+            <td> <input type="number" th:name="count4" class="form-control" placeholder="Количество"></td>
+            <td> <input type="number" th:name="price4" class="form-control" placeholder="Цена"></td>
+        </table>
+        <td> <button type="submit" class="btn btn-primary">Провести</button></td>
+    </form>
+    <br>
+
+    <h2>2. Формирование отчета</h2>
+    <form th:action="@{'/delivery-report'}">
+        <p>Укажите интервал, по которому хотите получить отчет о поставленных товарах: <br></p>
+        Дата начала<td> <input type="date" th:name="dateFrom" class="form-control"><br> </td>
+        Дата конца<td> <input type="date" th:name="dateTo" class="form-control"><br> </td>
+        <td> <button type="submit" class="btn btn-primary">Сформировть отчет</button></td>
+    </form>
+</div>
+</body>
