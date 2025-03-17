@@ -5,6 +5,11 @@ import jakarta.persistence.*;
 
 @Entity
 @Table (name = "product")
+/*
+ Продукция
+ @param id уникальный идентификатор продукции
+ @param title название
+ */
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

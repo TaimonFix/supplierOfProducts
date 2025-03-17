@@ -19,6 +19,9 @@ public class DeliveryController {
         this.deliveryService = deliveryService;
     }
 
+    /**
+     * Отображение страницы 'Заказы'
+     */
     @GetMapping("/delivery")
     public String deliveryPage(Model model) {
         List<Delivery> deliveryList = deliveryService.getAllDeliveries();

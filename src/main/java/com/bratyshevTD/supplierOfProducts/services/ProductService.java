@@ -18,13 +18,13 @@ public class ProductService {
         this.productRepository = productRepository;
     }
 
-    public void addProduct(Product product) {
-        productRepository.save(product);
-    }
-
-    public Product getProductById(Long id) {return productRepository.getReferenceById(id); }
-
-    public List<Product> getAllProducts() {return productRepository.findAll(); }
-
+    /**
+     * Получение продукции по названию
+     */
     public Product getByTitle(String title) {return productRepository.findByTitle(title);}
+
+    /**
+     * Получение всей продукции
+     */
+    public List<Product> getAllProducts() {return productRepository.findAll(); }
 }

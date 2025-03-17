@@ -19,6 +19,9 @@ public class SupplierController {
         this.supplierService = supplierService;
     }
 
+    /**
+     * Отображение страницы 'Поставщики'
+     */
     @GetMapping("/supplier")
     public String supplierPage(Model model) {
         List<Supplier> supplierList = supplierService.getAllSuppliers();

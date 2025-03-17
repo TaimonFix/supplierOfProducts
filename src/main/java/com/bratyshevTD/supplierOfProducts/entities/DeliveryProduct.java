@@ -4,6 +4,14 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "deliveries_products")
+/*
+ Промежуточная таблица между сущностями 'delivery','product' для устранения связи 'многие-ко-многим'
+ @param id уникальный идентификатор
+ @param deliveryId идентификатор заказа
+ @param productId идентификатор продукта
+ @param count количество продукции
+ @param price цена за единицу
+ */
 public class DeliveryProduct {
 
     @Id
@@ -14,13 +22,10 @@ public class DeliveryProduct {
     @JoinColumn(name = "delivery_id")
     private Delivery deliveryId;
 
-
-    @ManyToOne  (fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id")
     private Product productId;
-
     private int count;
-
     private int price;
 
     public DeliveryProduct(Delivery deliveryId, Product productId, int count, int price) {

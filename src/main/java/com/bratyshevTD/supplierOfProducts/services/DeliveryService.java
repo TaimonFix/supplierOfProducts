@@ -17,11 +17,22 @@ public class DeliveryService {
         this.deliveryRepository = deliveryRepository;
     }
 
-    public void addDelivery(Delivery delivery) {
-        deliveryRepository.save(delivery);
+    /**
+     * Добавление заказа
+     */
+    public Delivery addDelivery(Delivery delivery) {
+        return deliveryRepository.save(delivery);
     }
 
+    /**
+     * Поиск заказа по id
+     * @param id идентификатор заказа
+     */
     public Delivery getById(Long id) { return deliveryRepository.getReferenceById(id); }
+
+    /**
+     * Получение всех заказов
+     */
     public List<Delivery> getAllDeliveries() { return deliveryRepository.findAll(); }
 
 

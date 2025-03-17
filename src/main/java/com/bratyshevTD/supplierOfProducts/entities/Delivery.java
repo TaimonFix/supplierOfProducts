@@ -3,11 +3,22 @@ package com.bratyshevTD.supplierOfProducts.entities;
 import jakarta.persistence.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 
 @Entity
 @Table(name = "delivery")
+/*
+  Заказ
+  @param id уникальный идентификатор заказа
+  @param supplierId идентификатор поставщика
+  @param Дата заказа
+ */
 public class Delivery {
+    public static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("dd.MM.yyyy");
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,7 +28,6 @@ public class Delivery {
     @JoinColumn(name = "supplier_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Supplier supplierId;
-
     private LocalDate date;
 
 //    @ManyToMany(cascade = {
@@ -38,6 +48,11 @@ public class Delivery {
     }
 
     public Delivery() {
+    }
+
+    public Delivery(Supplier supplierId, LocalDate date) {
+        this.supplierId = supplierId;
+        this.date = date;
     }
 
     public Long getId() {

@@ -4,6 +4,12 @@ import jakarta.persistence.*;
 
 @Entity
 @Table (name = "Supplier")
+/*
+ Поставщик
+ @param id уникальный идентификатор продукции
+ @param fullName ФИО поставщика
+ @param phone телефон
+ */
 public class Supplier {
 
     @Id

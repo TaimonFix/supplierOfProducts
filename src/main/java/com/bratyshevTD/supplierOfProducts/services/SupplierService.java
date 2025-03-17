@@ -16,10 +16,15 @@ public class SupplierService {
         this.supplierRepository = supplierRepository;
     }
 
-    public Supplier getSupplierById(Long id) { return supplierRepository.getReferenceById(id); }
-
+    /**
+     * Получение поставщика по ФИО
+     * @param fullName ФИО поставщика
+     */
     public Supplier getByFullName(String fullName) { return supplierRepository.findByFullName(fullName); }
 
+    /**
+     * Получение всех поставщиков
+     */
     public List<Supplier> getAllSuppliers() { return supplierRepository.findAll(); }
 
 }

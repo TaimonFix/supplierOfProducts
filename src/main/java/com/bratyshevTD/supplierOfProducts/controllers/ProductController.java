@@ -19,6 +19,9 @@ public class ProductController {
         this.productService = productService;
     }
 
+    /**
+     * Отображение страницы 'Продукты'
+     */
     @GetMapping("/product")
     public String productPage(Model model) {
         List<Product> productList = productService.getAllProducts();

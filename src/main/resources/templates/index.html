@@ -19,33 +19,34 @@
     <h2 >1. Прием товаров</h2>
     <form th:action="@{'/delivery-accept'}" method="post">
 
-        Введите номер заказа  <input type="number" th:name="deliveryId" class="form-control" placeholder="Номер заказа"><br> </td>
-
         Введите ФИО Поставщика  <input type="text" th:name="supplier" class="form-control" placeholder="Поставщик"><br> </td>
         Введите дату поставки<td> <input type="date" th:name="date" class="form-control"><br> </td>
 
-        Введите товары, цену на них их количество
+        Введите название товаров (от 1 до 4 товаров), их количество и цену:
         <table>
-        <td> <input type="text" th:name="product1" class="form-control" placeholder="Товар 1"></td>
+        <td> <input type="text" th:name="product1" class="form-control" placeholder="Продукция 1"></td>
         <td> <input type="number" th:name="count1" class="form-control" placeholder="Количество"></td>
         <td> <input type="number" th:name="price1" class="form-control" placeholder="Цена"></td>
         </table>
         <table>
-            <td> <input type="text" th:name="product2" class="form-control" placeholder="Товар 2"></td>
+            <td> <input type="text" th:name="product2" class="form-control" placeholder="Продукция 2"></td>
             <td> <input type="number" th:name="count2" class="form-control" placeholder="Количество"></td>
             <td> <input type="number" th:name="price2" class="form-control" placeholder="Цена"></td>
         </table>
         <table>
-            <td> <input type="text" th:name="product3" class="form-control" placeholder="Товар 3"></td>
+            <td> <input type="text" th:name="product3" class="form-control" placeholder="Продукция 3"></td>
             <td> <input type="number" th:name="count3" class="form-control" placeholder="Количество"></td>
             <td> <input type="number" th:name="price3" class="form-control" placeholder="Цена"></td>
 
         </table>
         <table>
-            <td> <input type="text" th:name="product4" class="form-control" placeholder="Товар 4"></td>
+            <td> <input type="text" th:name="product4" class="form-control" placeholder="Продукция 4"></td>
             <td> <input type="number" th:name="count4" class="form-control" placeholder="Количество"></td>
             <td> <input type="number" th:name="price4" class="form-control" placeholder="Цена"></td>
         </table>
+        <td><div style="color: red" th:if="${exceptionInput !=null}" th:else>
+            Ошибка: <span th:text="${exceptionInput}"></span>
+        </div></td>
         <td> <button type="submit" class="btn btn-primary">Провести</button></td>
     </form>
     <br>
@@ -54,7 +55,10 @@
     <form th:action="@{'/delivery-report'}">
         <p>Укажите интервал, по которому хотите получить отчет о поставленных товарах: <br></p>
         Дата начала<td> <input type="date" th:name="dateFrom" class="form-control"><br> </td>
-        Дата конца<td> <input type="date" th:name="dateTo" class="form-control"><br> </td>
+        Дата окончания<td> <input type="date" th:name="dateTo" class="form-control"><br> </td>
+        <td><div style="color: red" th:if="${exceptionReport !=null}" th:else>
+            Ошибка: <span th:text="${exceptionReport}"></span>
+        </div></td>
         <td> <button type="submit" class="btn btn-primary">Сформировать отчет</button></td>
     </form>
 </div>

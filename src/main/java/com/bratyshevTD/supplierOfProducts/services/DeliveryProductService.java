@@ -19,8 +19,16 @@ public class DeliveryProductService {
         this.deliveryProductRepository = deliveryProductRepository;
     }
 
+    /**
+     * Добавление продукции из заказа
+     */
     public void addDeliveryProduct(DeliveryProduct deliveryProduct) { deliveryProductRepository.save(deliveryProduct); }
 
+    /**
+     * Получение отчета за определенный период
+     * @param dateFrom дата начала
+     * @param dateTo дата окончания
+     */
     public List<DeliveryReport> report(LocalDate dateFrom, LocalDate dateTo) {
         System.out.println(deliveryProductRepository.report(dateFrom, dateTo));
         return deliveryProductRepository.report(dateFrom, dateTo); }
