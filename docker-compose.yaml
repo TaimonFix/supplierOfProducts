@@ -1,0 +1,22 @@
+version: "3.10"
+services:
+  db:
+    image: postgres:16
+    container_name: supplier_of_products_db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=local
+      - POSTGRES_DB=supplier_of_products
+  app:
+    build: .
+    container_name: supplier_of_products_db_app
+    ports:
+      - "8883:8883"
+    environment:
+      - DB_HOST=localhost
+      - DB_PORT=5432
+      - DB_NAME=supplier_of_products
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=local

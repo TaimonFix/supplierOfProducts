@@ -1,9 +1,25 @@
 package com.bratyshevTD.supplierOfProducts.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 @Entity
+@RequiredArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 @Table(name = "deliveries_products")
+/*
+ Промежуточная таблица между сущностями 'delivery','product' для устранения связи 'многие-ко-многим'
+ @param id уникальный идентификатор
+ @param deliveryId идентификатор заказа
+ @param productId идентификатор продукта
+ @param count количество продукции
+ @param price цена за единицу
+ */
 public class DeliveryProduct {
 
     @Id
@@ -14,73 +30,16 @@ public class DeliveryProduct {
     @JoinColumn(name = "delivery_id")
     private Delivery deliveryId;
 
-
-    @ManyToOne  (fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id")
     private Product productId;
+    private Integer count;
+    private Integer price;
 
-    private int count;
-
-    private int price;
-
-    public DeliveryProduct(Delivery deliveryId, Product productId, int count, int price) {
+    public DeliveryProduct(Delivery deliveryId, Product productId, Integer count, Integer price) {
         this.deliveryId = deliveryId;
         this.productId = productId;
         this.count = count;
         this.price = price;
-    }
-
-    public DeliveryProduct() {
-    }
-
-    public Delivery getDeliveryId() {
-        return deliveryId;
-    }
-
-    public void setDeliveryId(Delivery deliveryId) {
-        this.deliveryId = deliveryId;
-    }
-
-    public Product getProductId() {
-        return productId;
-    }
-
-    public void setProductId(Product productId) {
-        this.productId = productId;
-    }
-
-    public int getCount() {
-        return count;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    @Override
-    public String toString() {
-        return "DeliveryProduct{" +
-                "id=" + id +
-                ", deliveryId=" + deliveryId +
-                ", productId=" + productId +
-                ", count=" + count +
-                ", price=" + price +
-                '}';
     }
 }

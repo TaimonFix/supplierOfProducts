@@ -1,0 +1,21 @@
+server:
+  port: 8883
+  servlet:
+    context-path: /app
+spring:
+  application:
+    name: supplierOfProducts
+  datasource:
+    drive-class: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/supplier_of_products?currentSchema=public
+    initialization-mode: always
+    username: postgres
+    password: local
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
