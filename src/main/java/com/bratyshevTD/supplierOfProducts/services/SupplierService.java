@@ -2,19 +2,16 @@ package com.bratyshevTD.supplierOfProducts.services;
 
 import com.bratyshevTD.supplierOfProducts.entities.Supplier;
 import com.bratyshevTD.supplierOfProducts.repositories.SupplierRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class SupplierService {
 
-    private SupplierRepository supplierRepository;
-
-    @Autowired
-    public void setSupplierRepository(SupplierRepository supplierRepository) {
-        this.supplierRepository = supplierRepository;
-    }
+    private final SupplierRepository supplierRepository;
 
     /**
      * Получение поставщика по ФИО

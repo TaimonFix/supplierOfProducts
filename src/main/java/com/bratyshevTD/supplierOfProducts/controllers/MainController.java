@@ -6,6 +6,7 @@ import com.bratyshevTD.supplierOfProducts.services.DeliveryProductService;
 import com.bratyshevTD.supplierOfProducts.services.DeliveryService;
 import com.bratyshevTD.supplierOfProducts.services.ProductService;
 import com.bratyshevTD.supplierOfProducts.services.SupplierService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,32 +17,13 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Controller
+@RequiredArgsConstructor
 public class MainController {
 
-    private DeliveryService deliveryService;
-    private ProductService productService;
-    private SupplierService supplierService;
-    private DeliveryProductService deliveryProductService;
-
-    @Autowired
-    public void setDeliveryService(DeliveryService deliveryService) {
-        this.deliveryService = deliveryService;
-    }
-
-    @Autowired
-    public void setProductService(ProductService productService) {
-        this.productService = productService;
-    }
-
-    @Autowired
-    public void setSupplierService(SupplierService supplierService) {
-        this.supplierService = supplierService;
-    }
-
-    @Autowired
-    public void setDeliveryProductService(DeliveryProductService deliveryProductService) {
-        this.deliveryProductService = deliveryProductService;
-    }
+    private final DeliveryService deliveryService;
+    private final ProductService productService;
+    private final SupplierService supplierService;
+    private final DeliveryProductService deliveryProductService;
 
     /**
      * Отображение главной страницы

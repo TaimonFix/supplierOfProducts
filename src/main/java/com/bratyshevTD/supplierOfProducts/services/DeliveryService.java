@@ -2,20 +2,16 @@ package com.bratyshevTD.supplierOfProducts.services;
 
 import com.bratyshevTD.supplierOfProducts.entities.Delivery;
 import com.bratyshevTD.supplierOfProducts.repositories.DeliveryRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class DeliveryService {
 
-
-    private DeliveryRepository deliveryRepository;
-
-    @Autowired
-    public void setDeliveryRepository(DeliveryRepository deliveryRepository) {
-        this.deliveryRepository = deliveryRepository;
-    }
+    private final DeliveryRepository deliveryRepository;
 
     /**
      * Добавление заказа
