@@ -1,3 +1,5 @@
+
+
 -- Добавление 3 поставщиков
 INSERT INTO supplier (full_name, phone) VALUES ('Иванов Иван Иванович', '+7(900) 021-21-21');
 INSERT INTO supplier (full_name, phone) VALUES ('Петров Михаил Федорович', '+7(951) 013-24-41');
