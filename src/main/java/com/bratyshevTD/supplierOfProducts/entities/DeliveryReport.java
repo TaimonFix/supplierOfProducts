@@ -1,8 +1,14 @@
 package com.bratyshevTD.supplierOfProducts.entities;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 @RequiredArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 /*
  Класс для формирования отчета
  @param supplierId идентификатор поставщика
@@ -14,6 +20,6 @@ public class DeliveryReport {
 
     private Supplier supplierId;
     private Product productId;
-    private long count;
-    private long sum;
+    private Long count;
+    private Long sum;
 }
