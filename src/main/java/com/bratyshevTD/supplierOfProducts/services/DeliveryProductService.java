@@ -18,7 +18,9 @@ public class DeliveryProductService {
     /**
      * Добавление продукции из заказа
      */
-    public void addDeliveryProduct(DeliveryProduct deliveryProduct) { deliveryProductRepository.save(deliveryProduct); }
+    public void addDeliveryProduct(DeliveryProduct deliveryProduct) {
+
+        deliveryProductRepository.save(deliveryProduct); }
 
     /**
      * Получение отчета за определенный период
