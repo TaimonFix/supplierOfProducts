@@ -33,7 +33,7 @@
 ## Инструкция по запуску приложения
 1. Клонируйте репозиторий в свою IDE
 2. Запустите Docker Desktop на своём компьютере
-3. Запустите терминал в [корне](supplierOfProducts) приложения
+3. Запустите терминал в [корне](https://github.com/TaimonFix/supplierOfProducts/blob/master) приложения
 4. В терминале введите команду: `docker-compose up -d --build`
 5. Запустите [SupplierOfProductsApplication.java](src/main/java/com/bratyshevTD/supplierOfProducts/SupplierOfProductsApplication.java).
 
